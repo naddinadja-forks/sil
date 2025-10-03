@@ -165,7 +165,7 @@ _xal_setup(struct sil_iter *iter, struct sil_dev *device)
 	struct xal *xal;
 	int err;
 
-	err = xal_open(device->dev, &xal);
+	err = xal_open_mountpoint(iter->opts->mnt, &xal);
 	if (err) {
 		fprintf(stderr, "xal_open(): %d\n", err);
 		return err;
